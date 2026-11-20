@@ -1,7 +1,17 @@
 /* ==========================================================================
    Villager-bloc-h.github.io
-   单页个人主页 — 无框架、无外部字体。
+   单页个人主页 — 无框架、无构建步骤，字体自托管。
    ========================================================================== */
+
+/* ---------- 字体 ---------- */
+/* Mojangles：Minecraft 字体，版权归 Mojang；来源与许可见 assets/fonts/README.md */
+@font-face {
+  font-family: "Mojangles";
+  src: url("fonts/Mojangles.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 
 /* ---------- 变量 ---------- */
 :root {
@@ -41,6 +51,7 @@
     "Microsoft YaHei", "Source Han Sans SC", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas,
     "Liberation Mono", monospace;
+  --font-minecraft: "Mojangles", "Minecraft", "Minecraftia", "Segoe UI", sans-serif;
 }
 
 [data-theme="light"] {
@@ -363,6 +374,14 @@ h1 {
   line-height: 1.08;
   letter-spacing: -.045em;
   text-wrap: balance;
+}
+
+/* 站名与页面大标题使用 Minecraft 的 Mojangles 字体 */
+.brand-name,
+#profile-title {
+  font-family: var(--font-minecraft);
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .role {
